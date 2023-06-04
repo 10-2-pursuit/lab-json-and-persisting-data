@@ -7,11 +7,15 @@ function findingUniqueEmail(){
 }
 
 function findingUniqueId(){
+    for (let i = 0; i < 100; i++){
     console.log(faker.string.uuid())
+    }
 }
 
 function findingNewNumber() {
+    for (let i = 0; i < 100; i++){
     console.log(faker.number.float())
+    }
 }
 
 function findingBoolean(){
