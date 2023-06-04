@@ -11,7 +11,7 @@ function createRandomStudent() {
             zipCode: faker.location.zipCode(),
         },
         age: faker.number.int({min:12, max:19}),
-        grade: faker.number.int({min:8, max:19}),
+        grade: faker.number.int({min:8, max:12}),
         name: {
             firstName: faker.person.firstName(),
             lastName: faker.person.lastName(),
@@ -31,7 +31,7 @@ function randomStudentsFactory(number) {
     return students;
 }
 
-console.log(randomStudentsFactory(10))
+console.log(randomStudentsFactory(5))
 
 module.exports = {
     createRandomStudent,
