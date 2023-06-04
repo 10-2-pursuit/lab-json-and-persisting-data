@@ -4,13 +4,14 @@
   "description": "You will build an app that generates a fake data set for a new app with the npm package `faker-js@7`.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
-    "jest": "^29.5.0"
+    "jest": "^29.5.0",
+    "lodash": "^4.17.21"
   }
 }

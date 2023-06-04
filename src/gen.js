@@ -8,7 +8,7 @@ function createObj(){
         brand: faker.company.name(),
         price: faker.commerce.price(),
         inStock: faker.datatype.boolean(),
-        reviewPoint: faker.datatype.number(),
+        reviewPoint: faker.datatype.number({ min: 1, max: 10 }),
     }
 
     return jsonObj;
@@ -23,6 +23,6 @@ function createArrF(num){
 }
 
 module.exports = {
-    createObj,
     createArrF,
+    createObj,
 }
