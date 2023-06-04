@@ -1,4 +1,5 @@
 const {randomStudentsFactory, createRandomStudent} = require("./student");
+const { writeJSONFile, readJSONFile } = require("./helper");
 
 function run() {
     if(process.argv[3]) {

@@ -15,4 +15,4 @@ function writeJSONFile(path, fileName, data){
 module.exports = {
     readJSONFile,
     writeJSONFile
-}
+};
