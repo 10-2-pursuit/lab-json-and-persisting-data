@@ -12,7 +12,7 @@ const { writeFileSync, readFileSync } = require("node:fs");
  */
 function writeJSON(path, fName, data){
     data = JSON.stringify(data);
-    return writeFileSync(`${path}/${fName}`, data, { encoding: "utf-8"});
+    return writeFileSync(`${path}/${fName}`, data, { encoding: "utf-8" , flag:'a'});
 }
 
 /**
@@ -25,7 +25,7 @@ function writeJSON(path, fName, data){
  * @returns a file stream
  */
 function readJSON(path, fName){
-    const data = readFileSync(`${path}/${fName}`, "utf8");
+    const data = readFileSync(`${path}/${fName}`, {encoding:"utf-8"});
     return data ? JSON.parse(data) : [];
 }
 

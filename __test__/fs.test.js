@@ -2,6 +2,7 @@ const { writeJSON, readJSON } = require("../src/fs.js");
 
 describe('readJSON', () => {
     const mock = require('mock-fs');
+    mock.restore();
     mock({
         'folderName': {
             'index.json': '{"_id":"d3156ec1-944f-4a25-afef-ca2811b78278"}'

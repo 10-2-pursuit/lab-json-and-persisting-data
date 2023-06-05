@@ -11,13 +11,11 @@ const _ = require('lodash');
 function run(){
     const argc = process.argv.length;
     if(argc == 2){
-        console.log(readJSON("./data","data.json"));
+        console.log(readJSON(`${process.cwd()}/data`,"data.json"));
     }
     else if(argc == 3){
         let arr = createArrF(process.argv[2]);
-        let temp = readJSON("./data","data.json");
-        temp = _.concat(temp,arr);
-        writeJSON("./data","data.json", temp);
+        writeJSON(`${process.cwd()}/data`,"data.json", arr);
     }
     else{
         console.log("node index.js (number) : will create (number) objects to JSON file");
