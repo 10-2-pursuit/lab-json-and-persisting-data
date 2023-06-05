@@ -1,6 +1,5 @@
 const { writeJSON, readJSON } = require("./src/fs.js");
 const { createArrF } = require("./src/gen.js");
-const _ = require('lodash');
 
 /**
  * run()
@@ -21,6 +20,11 @@ function run(){
         console.log("node index.js (number) : will create (number) objects to JSON file");
         console.log("node index.js : read & log JSON file");
     }
+    return 0;
 }
 
 run();
+
+module.exports = {
+    run,
+}
