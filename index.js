@@ -1,11 +1,5 @@
 const {faker} = require("@faker-js/faker");
-// import boolean from '@fakerjs/boolean';
 
-// boolean();
-// //=> true
-
-// boolean();
-// //=> false
 
 function findingUniqueEmail(){
         for (let i = 0; i < 100; i++){
@@ -24,7 +18,6 @@ function findingNewNumber() {
     console.log(faker.number.float())
     }
 }
-
 
 
 findingNewNumber()
