@@ -1,4 +1,5 @@
 const { createObj, createArrF } = require("../src/gen.js");
+const _ = require("lodash");
 
 describe("createObj", () => {
     const actual = createObj();
@@ -8,9 +9,15 @@ describe("createObj", () => {
 });
 
 describe("createArrF", () => {
-    const actual = createArrF(5).length;
-    const expected = 5
+    const actual = createArrF(100);
+    const expected = 100
     test('is it returns the right size of an array?', ()=>{
-        expect(actual).toBe(expected);
+        expect(actual.length).toBe(expected);
+    });
+    test('is it unique?', () => {
+        let actual2 = _.uniqBy(actual, (a) => {
+            return a._id;
+        }).length;
+        expect(actual2).toBe(100);
     })
 });
