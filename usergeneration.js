@@ -1,32 +1,42 @@
 const userNameArray = require("./userData/userNameInfo");
 const {faker} = require("@faker-js/faker");
-
+// createas a random generated name
 function randomlyGeneratedName() {
    const name = `${faker.word.adjective()}${faker.animal.type()}`;
    return name; 
 }
 
-function createUserName(input) {
-    for(let i = 0; i < userNameArray; i++){
-        if(input || userName  === i){
-            return "userName taken";
-        }
-        else {
-            input = userName
-        }
-        userNameArray.push(userName);
-    } 
-    if (!input) {
-    userName = randomlyGeneratedName() 
-    };
-    return userName ;
-    }
+//create a username either using the input given, or create a generated username
+    //if no input is given, 
+        //create a username
+        //using the randomlyGeneratedName()
+      
 
-    console.log(createUserName())
-    console.log(createUserName("pickledTomato"))
+function createUserName(input) {
+    if (!input) {
+        let userName = randomlyGeneratedName() 
+        return userName ;
+    };
+    if (input) {
+        return input
+    }
+}
+console.log(1, createUserName())
+console.log(2, createUserName("pickledTomato"))
+
+//returns a random animal of a random sex
+function randomAnimal(){
+    const animals = {
+        _animalName: faker.animal.type(),
+        _gender: faker.person.sex()
+    }
+     return animals
+    }
+    console.log(randomAnimal())
 
 
     module.exports = {
         randomlyGeneratedName,
-        createUserName
+        createUserName,
+        randomAnimal
     }
