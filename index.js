@@ -1,5 +1,5 @@
 const {
-    // createUserName,
+    createUserName,
     checkForDuplicates} = require("./usergeneration.js")
 const { writeJSONFile, readJSONFile } = require("./helper");
 

@@ -6,6 +6,15 @@ function randomlyGeneratedName() {
    return name; 
 }
 
+function createUserName(input) {
+    if (!input) {
+        let userName = randomlyGeneratedName() 
+        return userName ;
+    };
+    if (input) {
+        return input
+    }
+}
 
 function checkForDuplicates(userNameData, input) {
     const username = input || randomlyGeneratedName();
@@ -21,5 +30,6 @@ function checkForDuplicates(userNameData, input) {
 
 module.exports = {
         randomlyGeneratedName,
-        checkForDuplicates
+        checkForDuplicates,
+        createUserName
 }
