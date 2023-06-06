@@ -22,7 +22,7 @@ describe ('randomVehicleFactory()', () => {
     })
     it ('should return an  array with the amount of vehicles inputted as parameter', () => {
         const actual = randomVehicleFactory(2).length
-        const expected = vehicleData.length;
+        const expected = 2;
         expect(actual).toStrictEqual(expected)
     })
 })
