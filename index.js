@@ -1,19 +1,23 @@
 const {
-    createUserName,
+    // createUserName,
     checkForDuplicates} = require("./usergeneration.js")
 const { writeJSONFile, readJSONFile } = require("./helper");
 
-function run(){
+function run() {
     const username = readJSONFile("userData", "userNameInfo.json");
-            // console.log(username)
-    if(process.argv[2]){
-        username.push(...checkForDuplicates(process.argv[2]))
-    } 
-    else {
-        username.push(createUserName())
+    // console.log(username)
+    if (process.argv[2]) {
+      const newUsername = checkForDuplicates(username, process.argv[2]);
+      if (newUsername === "Username is taken") {
+        console.log("Username is taken");
+        return;
+      }
+      username.push(newUsername);
+    } else {
+      username.push(createUserName());
     }
-    writeJSONFile("userData", "userNameInfo.json", username)
-}
+    writeJSONFile("userData", "userNameInfo.json", username);
+  }
                 
 run()
 
