@@ -38,9 +38,14 @@ describe("createPlayer()", () => {
 })
 
 describe("playerList()", () => {
-    it("", () => {
-        const actual = []
-        const expected = []
+    it("should create one object when given an argument of 1", () => {
+        const actual = playerList(1).length
+        const expected = 1
+        expect(actual).toStrictEqual(expected)
+    })
+    it("should make multiple objects when given a number greater than 1", () => {
+        const actual = playerList(14).length
+        const expected = 14
         expect(actual).toStrictEqual(expected)
     })
 })

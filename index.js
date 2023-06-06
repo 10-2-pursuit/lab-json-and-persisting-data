@@ -22,27 +22,25 @@ function playerList(amount) {
     for(let i = 0; i < amount; i++) {
         players.push(createPlayer())
     }
-    return players.length > 1 ? players : players[0]
+    return players
 }
 
 function run(){
     let players = readJSON("./data", "data.json");
-    // console.log(players);
     if(process.argv[3]) {
         players.push(...playerList(process.argv[3]))
-        // return playerList(process.argv[3])
-        
     }
     else{  
-        //  console.log(playerList(1))
-        players.push(playerList(1));
-        writeJSON("./data","data.json", players);
+        players.push(...playerList(1));
     }
-    // console.log(players)
+    writeJSON("./data","data.json", players);
 }
 
 
-//  console.log(run())
+if(process.argv[2] == "create"){ 
+    run()
+    console.log(`Created object x${process.argv[3]} `)
+}
 
 module.exports = {
     createPlayer,
