@@ -1,4 +1,9 @@
 const { faker } = require("@faker-js/faker")
+const { 
+    writeJSON,
+    readJSON
+ } = require("./src/helpers")
+const { read } = require("fs")
 
 function createPlayer(){
     const player = {
@@ -20,8 +25,24 @@ function playerList(amount) {
     return players.length > 1 ? players : players[0]
 }
 
+function run(){
+    let players = readJSON("./data", "data.json");
+    // console.log(players);
+    if(process.argv[3]) {
+        players.push(...playerList(process.argv[3]))
+        // return playerList(process.argv[3])
+        
+    }
+    else{  
+        //  console.log(playerList(1))
+        players.push(playerList(1));
+        writeJSON("./data","data.json", players);
+    }
+    // console.log(players)
+}
 
-console.log(playerList(process.argv[2]))
+
+//  console.log(run())
 
 module.exports = {
     createPlayer,
