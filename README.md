@@ -18,7 +18,7 @@ To complete this lab, follow the instructions below. Additionally, make sure you
 
 You can choose whatever app idea you want and whatever data set makes sense for your app. At a minimum, your data set should have randomly generated fields for at least one of the following:
 
-- Unique id
+- Unique id //username
 - String
 - Boolean
 - Number
