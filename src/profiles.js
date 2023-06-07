@@ -1,14 +1,14 @@
-const { faker } = require( "faker-js/faker")
+const { faker } = require('@faker-js/faker');
 
 function createRandomProfile() {
     const user = {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     name: faker.person.fullName(),
     gender: faker.person.gender(),
     upVote: faker.phone.number(),
     sex: faker.person.sex(),
     bio: faker.person.bio(),
-    newMember: Boolean,
+    newMember: faker.datatype.boolean(),
     }
 }
 
@@ -20,7 +20,7 @@ function randomProfileFactory(number) {
     return users
 }
 
-module.export = {
+module.exports = {
     createRandomProfile,
     randomProfileFactory,
 }
