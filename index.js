@@ -12,9 +12,6 @@ function run(){
     writeJSONFile("data", "users.json", profiles)
 }
 
-try {
+
     run()
-}
-catch(err) {
-    console.log(err)
-}
+

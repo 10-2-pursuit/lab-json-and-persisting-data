@@ -5,11 +5,12 @@ function createRandomProfile() {
     id: faker.string.uuid(),
     name: faker.person.fullName(),
     gender: faker.person.gender(),
-    upVote: faker.phone.number(),
+    phoneNumber: faker.phone.number(),
     sex: faker.person.sex(),
     bio: faker.person.bio(),
     newMember: faker.datatype.boolean(),
     }
+    return user
 }
 
 function randomProfileFactory(number) {
