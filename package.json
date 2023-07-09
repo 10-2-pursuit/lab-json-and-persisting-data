@@ -12,5 +12,8 @@
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
     "@fakerjs/boolean": "^2.1.1"
+  },
+  "dependencies": {
+    "jest": "^29.6.1"
   }
 }
